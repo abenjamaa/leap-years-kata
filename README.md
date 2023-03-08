@@ -33,6 +33,7 @@ Le projet est découpé de la manière suivante :
         - application.properties : contient des variables. 
             par exemple : api.gouv.calendrier 
         - image : pour illustrer l'architecture du projet dans le README
+        
 ```
 
 ## Prérquis

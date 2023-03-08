@@ -58,20 +58,13 @@ public class YearsService {
      * @param year to check
      * @return is leap year
      */
-    private static Boolean checkIfIsLeap(int year) {
-        if(year % 400 == 0) {
-            return true;
-        }
-        if (year % 100 == 0) {
-            return false;
-         }
-        if(year % 4 == 0 ){
-            return true;
-        }
-
-        return false;
+    private Boolean checkIfIsLeap(int year) {
+        return yearDivisibleBy(year, 400) || (!yearDivisibleBy(year, 100) && yearDivisibleBy(year, 4));
     }
 
+    private boolean yearDivisibleBy(int year, int divisor){
+        return year % divisor == 0;
+    }
 
     private static void checkYear(String year) throws NotANumberException {
         if(!NumberUtils.isParsable(year)){
